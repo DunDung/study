@@ -1,0 +1,109 @@
+[mid2_3] 중간고사  
+내    용 
+------------------------------------------
+다음은 원을 다루는 프로그램이다. 주석과 설명을 참고하여 (1) ~ (4) 부분을 완성하시오.
+
+● 원(Circle) 객체는 반지름과 중심 속성을 지님
+● 원의 중심은 x, y 좌표로 이루어진 점(Point) 객체임
+● 클래스에 필드나 메소드를 추가하면 안됨
+● 출력은     
+false
+ true
+ 1.5
+ 10
+ 20
+
+
+ // Point 클래스와 Circle 클래스를 이용하는 클래스
+public class Main {
+    public static void main(String[] args) {  
+       Circle c1 = new Circle(1.5);
+       Circle c2 = new Circle(1.5, new Point(10, 20));
+       Circle c3 = new Circle(3.5, new Point(10, 20));
+
+      System.out.println(c2.sameCenter(c1));    // false
+       System.out.println(c2.sameCenter(c3));    // true
+
+      printCircle(c2);
+    }
+
+   // (1) 매개변수로 받은 원 c의 반지름, 중심의 x, y좌표를
+   //     출력하는 메소드
+   private static void printCircle(Circle c) {
+       System.out.println(                         );
+       System.out.println(                         );
+       System.out.println(                         );
+    }
+ }
+
+ 
+
+
+ // 점을 표현하는 클래스 Point
+ public class Point {
+    private int x; // x 좌표
+   private int y; // y 좌표
+
+   public Point(int x, int y) {
+       this.x = x;
+       this.y = y;
+    }
+    public int getX() {
+       return x;
+    }
+    public int getY() {
+       return y;
+    }
+ }
+
+ 
+
+ 
+
+// 원을 표현하는 클래스 Circle
+ public class Circle {
+    private double radius;  // 반지름
+   private Point center;   // 중심 점
+
+   // (2) 반지름은 매개변수로 받아 초기화하고, 중심은
+   //       x, y좌표가 0, 0인 점으로 초기화하는 생성자
+   public Circle(double radius) {
+   
+
+ 
+
+ 
+
+   }
+
+   // (3) 반지름과 중심을 매개변수로 받아 초기화하는 생성자
+   public Circle(double radius, Point center) {
+      
+
+ 
+
+
+    }
+
+   public double getRadius() {
+       return radius;
+    }
+
+   public Point getCenter() {
+       return center;
+    }
+
+   // (4) 현재 원이 매개변수로 받은 원(other)과 중심 점의 
+    //    x, y 좌표가 모두 동일한지 여부(true/false)를 리턴하는
+   //    메소드
+   // -이 메소드에는 출력문 없음
+   public boolean sameCenter(Circle other) {
+
+ 
+
+ 
+
+
+    }
+ }
+ 

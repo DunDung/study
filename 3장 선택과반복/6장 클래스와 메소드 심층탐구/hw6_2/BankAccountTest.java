@@ -14,7 +14,7 @@ public class BankAccountTest {
 		System.out.println("hw6_2: 홍준성");
 		Scanner input = new Scanner(System.in);
 		 // (1) 계좌번호 1, 예금주명 kim, 잔액 9000으로 초기화한 은행계좌 생성(account1 이라고 하자)
-		BankAccount account1 = new BankAccount(1, "kim", -3000); //
+		BankAccount account1 = new BankAccount(1, "kim", 9000); //
 		//(2) 계좌번호 2, 예금주명 lee로 초기화한 은행계좌 생성(account2 라고 하자)
 		BankAccount account2 = new BankAccount(2, "lee");
 
