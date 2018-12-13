@@ -22,19 +22,40 @@ public class Item {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public Date getCreateTime() {
         return createTime;
+    }
+
+    public void setCreateTime(Date date) {
+        this.createTime = date;
     }
 
     public String getCreateTimeFormatted() {
         return format.format(createTime);
     }
 
-    public boolean isChecked() { return checked; }
-    public void setChecked(boolean checked) { this.checked = checked; }
+    public void setCreateTimeFormatted(String s) {
+        try {
+            this.createTime = format.parse(s);
+        } catch (Exception e) {
+        }
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
 
     @Override
     public String toString() {
         return String.format("(%s)", title);
     }
 }
+
