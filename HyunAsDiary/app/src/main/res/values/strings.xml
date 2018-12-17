@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HyunA\'sDiary</string>
+    <string name="title">현아의 일기장</string>
+    <string name="password">비밀번호 입력!</string>
+    <string name="enter">현아 맞아요?</string>
+    <string name="action_remove">삭제</string>
+</resources>
