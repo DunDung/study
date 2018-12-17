@@ -8,7 +8,9 @@ public class ProductComparator implements Comparator<Product>{
 	public int compare(Product a, Product b) {
 		int r = a.name.compareTo(b.name);
 		if(r != 0) return r;
-		return a.price - b.price;
+		r = a.price - b.price;
+		if(r != 0) return r;
+		return a.id-b.id;
 	}
 
 }

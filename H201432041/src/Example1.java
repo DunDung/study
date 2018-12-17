@@ -6,22 +6,18 @@ import java.util.Map;
 public class Example1 {
 
 	static int solution(List<Integer> list) {
-		Map<Integer, Integer> m = new HashMap<>();
-		int max = 0;
-		int result = 0;
-		for(int i=0; i<list.size(); i++) {
-			if(!m.containsKey(list.get(i)))
-				m.put(list.get(i), 1);
-			else 
-				m.replace(list.get(i), m.get(list.get(i)), m.get(list.get(i))+1);
-		}
-		for(int i=0; i<list.size(); i++) {
-			if(max<m.get(list.get(i))) {
-					max = m.get(list.get(i));
-					result = list.get(i);
-			}
-		}
-		return result;
+		   Map<Integer, Integer> map = new HashMap<>();
+	        int maxValue = 0, maxCount = 0;
+	        for (int value : list) {
+	            Integer count = map.get(value);
+	            map.put(value, count == null ? 1 : count + 1);
+	            if (map.get(value) > maxCount) {
+	                maxCount = map.get(value);
+	                maxValue = value;
+	            }
+	        }
+	        System.out.println(map);
+	        return maxValue;
 	}
 
 	public static void main(String[] args) {

@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.SortedSet;
 
 public class Example6 {
 
@@ -9,16 +10,17 @@ public class Example6 {
         int[] a = new int[20];
         for (int i = 0; i < a.length; ++i)
             a[i] = random.nextInt(5);
-        Map<Integer, Integer> m = new HashMap<>();
-
-        for(int i=0; i<a.length; i++) {
-        	if(!m.containsKey(a[i]))
-        		m.put(a[i], 1);
-        	else
-        		m.replace(a[i], m.get(a[i]), m.get(a[i])+1);
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int key : a) {
+            Integer count = map.get(key);
+            if (count == null) count = 0;
+            ++count;
+            map.put(key, count);
         }
-        for(int i=0; i<5; i++)
-        	System.out.print(i+"="+m.get(i)+" ");
+        
+        System.out.println(map);
+        for (int key : map.keySet())
+            System.out.printf("%d=%d ", key, map.get(key));
     }
 }
 

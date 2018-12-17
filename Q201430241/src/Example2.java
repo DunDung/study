@@ -7,18 +7,12 @@ import java.util.List;
 public class Example2 {
 
     static List<String> solution(String[] a1, String[] a2, String[] a3) {
-    	List<String>l1 = Arrays.asList(a1);
-    	List<String>l2 = Arrays.asList(a2);
-    	List<String>l3 = Arrays.asList(a3);
-    	Collection<String> c = new ArrayList<>();
-    	c.addAll(l1);
-    	c.removeAll(l2);
-    	c.addAll(l2);
-    	c.removeAll(l3);
-    	return (List<String>)c;
-
+    	List<String> s = new ArrayList<>();
+    	s.addAll(Arrays.asList(a1));
+    	s.addAll(Arrays.asList(a2));
+    	s.removeAll(Arrays.asList(a3));
+    	return s;
     }
-
     public static void main(String[] args) {
         String[] a1 = { "A", "B", "D", "F", "G" };
         String[] a2 = { "B", "C", "F", "H", "I" };

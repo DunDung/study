@@ -23,7 +23,7 @@ class Product {
     public boolean equals(Object obj) {
     	if(obj instanceof Product) {
     		Product p = (Product)obj;
-    		return this.id == p.id && this.name.equals(p.name)&&this.category.equals(p.category);
+    		return this.id == p.id && this.name.equals(p.name)&&this.category.equals(p.category); //°¨Á¡1Á¡
     	}
     	else
     		return false;

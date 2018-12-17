@@ -23,17 +23,10 @@ public class Example2 {
     }
 
     static void addEven(List<Integer> list) {
-    	Iterator<Integer> l =  list.iterator();
-    	Collection<Integer> c = new ArrayList<>();
-    	while(l.hasNext()) {
-    		Integer z = l.next();
-    		if(z%2 != 0) {
-    			c.add(z-1);
-    		}
-    	}
-    	list.addAll(c);
-    	Collections.sort(list);
-    }
+    	   int count = list.size() * 2;
+           for (int i = 0; i < count; i += 2)
+               list.add(i, i);
+       }
 
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();

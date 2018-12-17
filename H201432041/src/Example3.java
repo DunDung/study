@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Example3 {
 
@@ -8,18 +9,26 @@ public class Example3 {
 		// 배열 a에서 2의 배수와 3의 배수를 모두 제거하고
 		// 제거된 항목의 뒷 항목들을 앞으로 당겨야 한다.
 		// 제거된 항목 때문에 생간 배열 뒤의 공간에 -1을 채워라
-		int end = a.length-1;
-		for(int i=0; i<a.length; i++) {
-			if(a[i] % 2 ==0 || a[i] %3 ==0) {
-				for(int j = i; j<a.length-1; j++) {
-					a[j] = a[j+1];
-				}
-				a[end] = -1;
-				end--;
-				i--;
-			}
-		}
+
+		//		int end = a.length-1;
+		//		for(int i=0; i<a.length; i++) {
+		//			if(a[i] % 2 ==0 || a[i] %3 ==0) {
+		//				for(int j = i; j<a.length-1; j++) {
+		//					a[j] = a[j+1];
+		//				}
+		//				a[end] = -1;
+		//				end--;
+		//				i--;
+		//			}
+		//		}
+		int index = 0;
+		for (int i = 0; i < a.length && a[i] > 0; ++i)
+			if ((a[i] % 2) != 0 && (a[i] % 3) != 0)
+				a[index++] = a[i];
+		for (int i = index; i < a.length; ++i)
+			a[i] = -1;
 	}
+
 
 	public static void main(String[] args) {
 		int[] a = new int[] {1, 6, 1, 8, 9, 2, 2, 3, 5, 3, 1, 3, 7};
