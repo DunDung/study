@@ -20,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                EditText e = (EditText)findViewById(R.id.editText);
-               if (e.getText().toString().equals("0208"))
-                    startActivity(new Intent(MainActivity.this, DiaryActivity.class));
+               if (e.getText().toString().equals("0208")) {
+                   startActivity(new Intent(MainActivity.this, DiaryActivity.class));
+                    e.setText("");
+               }
                else Toast.makeText(MainActivity.this, "현아가 아니잖아요^^", Toast.LENGTH_SHORT).show();
             }
         });
