@@ -1,4 +1,0 @@
-#Tomcat publish data
-#Mon Dec 03 22:38:53 KST 2018
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\ebseu\\.m2\\repository\\org\\springframework\\spring-web\\5.0.11.RELEASE\\spring-web-5.0.11.RELEASE.jar=C\:\\Users\\ebseu\\Documents\\sts-bundle\\pivotal-tc-server-developer-3.2.6.RELEASE\\base-instance\\wtpwebapps\\jpa10\\WEB-INF\\lib\\spring-web-5.0.11.RELEASE.jar
-org.eclipse.jst.jee.server\:jpa10=C\:\\Users\\ebseu\\Documents\\sts-bundle\\pivotal-tc-server-developer-3.2.6.RELEASE\\base-instance\\wtpwebapps\\jpa10

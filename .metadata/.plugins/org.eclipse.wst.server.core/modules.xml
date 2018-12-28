@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<modules>
-  <module moduleId="org.eclipse.jst.jee.server:book" serverId="Pivotal tc Server Developer Edition v3.2"/>
-  <module moduleId="org.eclipse.jst.jee.server:A201432041-1" serverId="Pivotal tc Server Developer Edition v3.2"/>
-  <module moduleId="org.eclipse.jst.jee.server:E201432041" serverId="Pivotal tc Server Developer Edition v3.2"/>
-  <module moduleId="org.eclipse.jst.jee.server:201432041-1" serverId="Pivotal tc Server Developer Edition v3.2"/>
-  <module moduleId="org.eclipse.jst.jee.server:mybatis1"/>
-  <module moduleId="org.eclipse.jst.jee.server:jpa10"/>
-</modules>
