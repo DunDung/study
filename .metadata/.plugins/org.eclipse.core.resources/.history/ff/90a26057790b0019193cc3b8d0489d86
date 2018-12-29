@@ -1,0 +1,12 @@
+package stepByStep;
+
+import java.util.Scanner;
+
+public class Q2751 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("강한친구 대한육군");
+		System.out.println("강한친구 대한육군");
+	}
+}
