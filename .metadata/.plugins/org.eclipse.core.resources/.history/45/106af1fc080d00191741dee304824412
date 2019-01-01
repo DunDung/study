@@ -1,0 +1,39 @@
+package stepByStep;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Objects;
+import java.util.Scanner;
+
+public class Q1181 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		Data [] a = new Data[n];
+
+		for(int i=0; i<n; i++) {
+			
+			a[i] = new Data(scan.next());
+		}
+		Arrays.sort(a);
+		for(Data d: a)
+			System.out.println(d.s);
+	}
+	
+}
+class Data implements Comparable<Data>{
+	String s;
+
+	public Data(String s){
+		this.s = s;
+	}
+	
+	@Override
+	public int compareTo(Data o) {
+		int r = this.s.length()-o.s.length();
+		if(r==0)
+			r = this.s.compareTo(o.s);
+		return r;		
+	}
+}
