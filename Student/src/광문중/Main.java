@@ -1,6 +1,5 @@
 package 광문중;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -16,7 +15,7 @@ public class Main {
 
 		// 종료를 선택할 때까지 반복하여 메뉴를 제공하고 그에 맞는 트리 연산을 수행
 		do {
-			System.out.print("1:전체조회 2:학생삽입 3:돈삽입 4:수익자,지원자 5:HTMLver 9:종료 --->");
+			System.out.print("1:전체조회 2:학생삽입 3:돈삽입 4:순위등록 5:HTMLver 9:종료 --->");
 			menu = scan.nextInt();
 			switch(menu) {
 			case 1:
@@ -32,7 +31,10 @@ public class Main {
 					int 반 = scan.nextInt();
 					int 번호 = scan.nextInt();
 					String 이름 = scan.next();
-					list.add(new Student(학년, 반, 번호, 이름));
+					if(list.contains(new Student(학년, 반, 번호, 이름)))
+						System.out.println(이름+"은 이미 존재하는 학생임다");
+					else
+						list.add(new Student(학년, 반, 번호, 이름));
 				}
 					
 				break;				
@@ -41,10 +43,15 @@ public class Main {
 					String 이름 = scan.next();
 					if(이름.equals("0"))
 						break;
-					String 금액 = scan.next();
+					int 금액 = scan.nextInt();
+					boolean check = false;
 					for(int i=0; i<list.size(); i++)
-						if(list.get(i).get이름().equals(이름))
+						if(list.get(i).get이름().equals(이름)) {
+							check = true;
 							list.get(i).set금액(금액);
+						}
+					if(!check)
+						System.out.println(이름+"학생을 찾지 못했습니다");
 				}
 				break;
 			case 4:
@@ -52,10 +59,10 @@ public class Main {
 					String 이름 = scan.next();
 					if(이름.equals("0"))
 						break;
-					String 지원여부 = scan.next();
+					int 순위 = scan.nextInt();
 					for(int i=0; i<list.size(); i++)
 						if(list.get(i).get이름().equals(이름))
-							list.get(i).set지원여부(지원여부);;
+							list.get(i).set순위(순위);;
 				}
 				break;
 			case 5:
@@ -84,7 +91,7 @@ public class Main {
 					System.out.println("<td>"+list.get(i).get번호()+"</td>");
 					System.out.println("<td>"+list.get(i).get이름()+"</td>");
 					System.out.println("<td>"+list.get(i).get금액()+"</td>");
-					System.out.println("<td>"+list.get(i).get지원여부()+"</td>");
+					System.out.println("<td>"+list.get(i).get순위()+"</td>");
 					System.out.println("</tr>");
 				}
 				System.out.println("</tbody>");
