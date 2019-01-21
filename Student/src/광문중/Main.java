@@ -32,7 +32,7 @@ public class Main {
 					int 번호 = scan.nextInt();
 					String 이름 = scan.next();
 					if(list.contains(new Student(학년, 반, 번호, 이름)))
-						System.out.println(이름+"은 이미 존재하는 학생임다");
+						System.out.println(이름+"은 이미 존재하는 학생입니다");
 					else
 						list.add(new Student(학년, 반, 번호, 이름));
 				}
