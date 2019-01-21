@@ -2,59 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-
+    <link rel="stylesheet" type="text/css"href="style-size.css"/>
+    <link rel="stylesheet" type="text/css"href="style-layout.css"/>
+    <link rel="stylesheet" type="text/css"href="style-presentation.css"/>
   </head>
-  <body>
-    <div class="wrap">
-      <header>
-        <a id="logo" href="main.html"> JunSeong BookStore</a>
-        <span class="right" style="padding: 30px 10px;">
-          <a href="login.html" target="display_area">로그인</a>
-          <a href="signup.html" target="_blank">회원가입</a>
-        </span>
-      </header>
-
-      <nav>
-        <ul>
-          <li><a href="domestic_books.html" target="display_area">국내도서</a></li>
-          <li><a href="foreign_books.html" target="display_area">해외번역도서</a></li>
-          <li><a href="music.html" target="display_area">음반/DVD</a></li>
-          <li class="right"><a href="order.html" target="display_area">주문하기</a></li>
-        </ul>
-      </nav>
-
-      <hr/>
-
-      <article class="left">
-        <iframe name="display_area" src="books.jpg" seamless="true"
-                      width="600px" height="500px"></iframe>
-      </article>
-
-      <aside class="right">
-        <button id="all" style="width:85px" disabled>전체</button><br/>
-        <button id="best" style="width:85px" disabled>베스트셀러</button><br/>
-        <button id="recommend" style="width:85px" disabled>추천도서</button><br/>
-        <button id="memo" style="width:85px" disabled>메모하기</button><br/>
-        <button id="location" style="width:85px" disabled>현재위치</button><br/>
-      </aside>
-      <hr/>
-
-      <footer>
-        <div id="copyright">
-          copyright (c) 2019 JunSeongBookStore Inc. All right reserved
-        </div>
-        <div id="SNS">
-          <a href="http://facebook.com" target="_blank">
-            <img src="facebook.png" height="32" alt="FaceBook">
-          </a>
-          <a href="http://twitter.com" target="_blank">
-            <img src="twitter.png" height="32" alt="Twitter">
-          </a>
-          <a href="http://plus.google.com" target="_blank">
-            <img src="google.jpg" height="32" alt="Google Plus">
-          </a>
-        </div>
-      </footer>
-    </div>
+  <body id="login">
+    <form>
+      <a>회원가입</a>
+      <a>아이디/비밀번호찾기</a>
+      <fieldset>
+        <span>사용자 아이디</span>
+        <input id="username" type="text"/><br>
+        <span>비밀번호</span>
+        <input id="password" type="password"><br>
+        <span></span>
+        <input id="login_button" type="submit" value="로그인" disabled/>
+        <input id="reset" type="button" value="취소" disabled/>
+      </fieldset>
+    </form>
   </body>
 </html>
