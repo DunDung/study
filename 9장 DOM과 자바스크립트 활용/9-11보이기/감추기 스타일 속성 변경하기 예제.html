@@ -25,28 +25,21 @@
     </div>
 
     <script type="text/javascript">
-    function changePositions() {
-      for(i=1 i<=3; i++) {
-        var left = document.getElementById("left" + i).value;
-        var top = document.getElementById("top"+i).value;
-        document.getElementById("img"+i).style.left=left+"px";
-        document.getElementById("img"+i).style.top=top+"px";
+    function toggleVisibility(id) {
+      var dom = document.getElementById(id);
+
+      if(dom.style.visibility == "visible")
+        dom.style.visibility="hidden";
+      else {
+        dom.style.visibility="visible";
       }
     }
 
     </script>
 
-  <form>
-    Image1: Left <input id="left1" size="2" type="text"/>
-    Top <input id="top1" size="2" type="text"/> <br/>
-
-    Image2: Left <input id="left2" size="2" type="text"/>
-    Top <input id="top2" size="2" type="text"/> <br/>
-
-    Image3: Left <input id="left3" size="2" type="text"/>
-    Top <input id="top3" size="2" type="text"/> <br/>
-
-    <input type="button" value="Move All" onclick="changePositions();"/>
-  </form>
+    Toggle visibility:
+    <button onclick="toggleVisibility('img1');">Image 1</button>
+    <button onclick="toggleVisibility('img2');">Image 2</button>
+    <button onclick="toggleVisibility('img3');">Image 3</button>
   </body>
 </html>
