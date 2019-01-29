@@ -1,0 +1,60 @@
+@SpringBootApplication 에노테이션과
+메인 메소드가 들어있는 클래스가 
+스프링 부트 기반의 프로젝트에서 메인이 되는 에플리케이션이다.
+
+서버사이드쪽 코드는 메인메소드를 통해 실행해도 다 실행이 되지만
+프론트엔드쪽 코드를 수정했을 때는 메이븐으로 실행을 하거나 wro4j를 직접 실행하고
+다시 메인에플리케이션을 실행해야 한다.
+
+src/main/java쪽에 소스코드가 들어있고
+src/main/less쪽에 뷰관련 파일이 들어있고
+src/main/resources에는 리소스가 들어있고
+src/test/java에는 테스트 코드가 들어있다
+
+오너가 펫을가지고있고
+펫은 여러개의 비짓(방문)을 할수있고
+수의사는 여러개의 스페셜티(전공)이 있다.
+
+-IoC(Inversion of Control) 컨트롤이 뒤바꼈다.
+주로 의존성에 대한 컨트롤이 뒤바꼈다고 말한다.
+원래 의존성에 대한 제어권은 자기 자신이 가지고있었다.
+레포지토리가 있어야 컨트롤러를 쓸 수 있다.
+의존성을 자기 자신이 관리하던 코드를 뒤바꼈다.
+의존성을 내가 관리하지 않고 나 이외에 누가 관리한다.
+
+class OwnerController {
+	private OwnerRepository repositroy = new OwnerRepository;
+	//본인이 쓸 레포지토리를 본인이 직접 new로 생성하여 쓴다.  기존의 의존성. 제어권을 본인이 가진다.
+}
+class OwnerController{ 
+	private OwnerRepository repo;
+
+	public OwnerController(OwnerRepository repo){
+	this.repo = repo;
+	//의존성을 본인이 직접 관리하지 않고 나 이외의 누가 관리한다.
+	}
+}
+
+IoC(Inversion of Control) 컨테이너
+
+스프링 프레임웍은 IoC용 컨테이너를 제공해준다. 
+핵심적인 인터페이스가 ApplicationContext(BeanFactory)이다. IoC컨테이너라고 불린다.
+직접쓸일은 거의 없다.
+위에 코드같은 구조를 동작하게 만들어 준다,
+컨트롤러가 IoC컨테이너 내부에 객채로 들어오고
+IoC컨테이너 내부에서 컨트롤러 객체를 만들어준다.
+그리고 Repository타입의 객체도 만들어준다.
+IoC컨테이너가 해주는 일들은 컨테이너 내부에 만든 객체들(빈)의 의존성을 관리해준다.
+컨트롤러와 레포지토리도 컨테이너가 만들어주는 빈이다.
+둘의 의존성은 IoC컨테이너가 관리해준다. 오로지 빈만 관리해줄 수 있다.
+어떤 클래스가 빈이고 어떤 클래스가 빈이아니냐
+클래스위에 에노테이션이 붙어있으면 컴포넌트 스캔방식으로 빈으로 등록해준다.
+IoC컨테이너 내부에서 객체들을 만들고 의존성을 엮어준다.
+빈을 만들고 생성자에 주입을 해준다.
+이것들이 IoC컨테이너가 해주는 주요한 일이다.
+
+IoC컨테이너를 굳이 직접 보고싶다면
+@Autowired로 직접 꺼낸다.
+@Autowired
+ApplicationContext applicationContext로 본인을 직접 빈으로 등록해서
+applicationContext.getBeen("클래스명.class")로 찍어볼수 있다. 
