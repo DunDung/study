@@ -15,7 +15,8 @@ src/test/java에는 테스트 코드가 들어있다
 펫은 여러개의 비짓(방문)을 할수있고
 수의사는 여러개의 스페셜티(전공)이 있다.
 
--IoC(Inversion of Control) 컨트롤이 뒤바꼈다.
+-IoC(Inversion of Control) Inversion 반전, 뒤집다.
+컨트롤이 뒤바꼈다.
 주로 의존성에 대한 컨트롤이 뒤바꼈다고 말한다.
 원래 의존성에 대한 제어권은 자기 자신이 가지고있었다.
 레포지토리가 있어야 컨트롤러를 쓸 수 있다.
@@ -58,3 +59,66 @@ IoC컨테이너를 굳이 직접 보고싶다면
 @Autowired
 ApplicationContext applicationContext로 본인을 직접 빈으로 등록해서
 applicationContext.getBeen("클래스명.class")로 찍어볼수 있다. 
+
+빈(Bean)
+스프링 IoC컨테이너가 관리하는 객체
+에노테이션 자체에는 기능이없다.
+에노테이션은 주석과 같다.
+어디에 붙일것이냐, 어디에 유지할것이냐를 정의하는 것 뿐
+에노테이션을 마커로해서 처리하는 프로세스가 있을 뿐이다.
+@ComponentScan을 처리하는 애는 컴포넌트 스캔을보면
+대부분은 모든 클래스들, 패키지에 @Component를 찾아 빈으로 등록해라.
+
+@Component
+1.@Repository
+2.@Service
+3.@Controller
+3개의 에노테이션이 포함된다. 컴포넌트 에노테이션이 붙어있으면 @ComponentScan에 의해
+빈으로 등록이 된다. 
+
+또는 빈을 직접 등록하는 방법이있다.
+@Bean
+public String js(){
+	return js;
+}
+js메소드가 빈으로 등록된다.
+@SpringBootApplication은 여러가지 필요한 에노테이션을 합쳐놓은 것이다.
+@Configuration이라는 에노테이션이 있는 클래스에다가만 빈을 등록해야 한다.
+@SpringBootApplication에 포함되어 있다.
+
+@Autowired를 사용해서 꺼내쓸 수 있다.
+
+@Autowired
+String js; ->메소드가 객체로 된다. 게터. 
+return "hello "+ js 
+hello js 출력
+
+IoC컨테이너는 
+오로지 빈들의 의존성만 관리해준다
+
+
+의존성 주입(Dependency Injection) DI  
+@Autowired
+@Inject 
+두개의 에노테이션을 사용해 주입을 받아 사용한다.
+
+Bean이되는 클래스에에 생성자가 오직 하나만 있고 생성자의 파라미터로 받는 타입이 
+빈으로 등록이 되어있다면 @Autowired가 없더라도 주입을 해준다. 생략을 한거다.
+JPA에서 Repository는 빈으로 등록된다. Spring JPA가 해주는 것이다. extend Repository를 하면.
+
+@Autowired/@Inject 를 어디에 붙일까?
+1.생성자
+2.필드
+3.세터 
+셋다 가능은 함
+
+1순위 생성자
+2순위 세터
+3순위 필드
+
+@Autowired를 붙이고 싶어서 따로 setter를 만드는것은 과하다
+setter가 없다면 필드에 붙여라.
+setter로 인해 오히려 의존성이 위험해질수있다.
+
+
+ 
