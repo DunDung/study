@@ -4,7 +4,6 @@ INDEX VERSION 1.131+C:\Users\ebseu\Documents\GitHub\Java-Study\.metadata\.plugin
 2992140577.index
 980029179.index
 713818288.index
-2186899505.index
 3305016839.index
 1421056501.index
 4268093026.index
