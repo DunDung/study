@@ -120,5 +120,18 @@ JPA에서 Repository는 빈으로 등록된다. Spring JPA가 해주는 것이다. extend Reposit
 setter가 없다면 필드에 붙여라.
 setter로 인해 오히려 의존성이 위험해질수있다.
 
+Aspect 양상
+Oriented 지향적인
+AOP(Aspect Oriented Programming) 
+흩어진 코드를 한곳으로 모으는 코딩 기법.
 
+1.바이트코드를 조작하는방법(.class 조작)
+2.프록시패턴을 사용하는 방법
+
+흩어진 코드를 한곳으로 모아오고 그 다른 기타 클래스들은
+자신이 해야하는 일만 하도록  
+Single Responsibility Principle 객체지향 원칙에 적합하도록 한다. 
+객체는 오직 하나의 책임을 져야한다. 한가지 일만 수행해야 한다.
+
+스프링 AOP는 프록시 패턴을 사용한다
  
