@@ -4,20 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class duplicate {
+public class StarChange {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Map<String, Integer> m = new HashMap<>();
 		while(true) {
-			
 			String s = scan.next();
-			if(s.equals("³¡"))
-				break;
-			if(m.containsKey(s.substring(1, 3)))
-				System.out.println(s);
+			if(s.length() == 2)
+				System.out.println(s.substring(0,1)+"*");
 			else
-				m.put(s.substring(1, 3), 1);
+				System.out.println(s.substring(0,1)+"**");
 			
 		}
 			
