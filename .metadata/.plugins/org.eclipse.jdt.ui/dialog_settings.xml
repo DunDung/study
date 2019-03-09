@@ -5,7 +5,9 @@
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
 		<item value="*" key="patterns"/>
+		<item value="false" key="updateSimilarElements"/>
 		<item value="false" key="updateTextualMatches"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
@@ -46,6 +48,21 @@
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
 	</section>
+	<section name="FatJarPackageWizard">
+		<item value="C:\Users\ebseu\Documents\GitHub\Java-Study" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="Main (3) - GwangMoon" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="GwangMoon\HongJunSeong.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
+		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="GwangMoon\HongJunSeong.jar"/>
+			<item value="GwangMoon/HongJunSeong.jar"/>
+		</list>
+		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value="C:\Users\ebseu\Documents\GitHub\Java-Study.xml"/>
+			<item value=".xml"/>
+		</list>
+	</section>
 	<section name="SourceActionDialog.methods">
 		<item value="true" key="IgnoreDefault"/>
 		<item value="false" key="Objects.equals &amp; Objects.hash"/>
@@ -65,6 +82,9 @@
 	</section>
 	<section name="NewPackageWizardPage">
 		<item value="false" key="create_package_info_java"/>
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item value="3" key="pageIndex"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>
