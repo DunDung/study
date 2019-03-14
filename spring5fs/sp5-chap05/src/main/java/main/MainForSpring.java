@@ -1,7 +1,6 @@
 package main.java.main;
 
-import main.java.config.AppConf1;
-import main.java.config.AppConf2;
+import main.java.config.AppCtx;
 import main.java.spring.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -15,7 +14,7 @@ public class MainForSpring {
     private static ApplicationContext ctx =null;
 
     public static void main(String [] args) throws IOException {
-        ctx = new AnnotationConfigApplicationContext(AppConf1.class, AppConf2.class);
+        ctx = new AnnotationConfigApplicationContext(AppCtx.class);
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -51,7 +50,7 @@ public class MainForSpring {
             printHelp();
             return;
         }
-        MemberRegisterService regSvc =ctx.getBean("memberRegSvc", MemberRegisterService.class);
+        MemberRegisterService regSvc =ctx.getBean(MemberRegisterService.class);
         RegisterRequest req = new RegisterRequest();
         req.setEmail(arg[1]);
         req.setName(arg[2]);
@@ -75,7 +74,7 @@ public class MainForSpring {
             printHelp();
             return;
         }
-        ChangePasswordService changePwdSvc = ctx.getBean("changePwdSvc", ChangePasswordService.class);
+        ChangePasswordService changePwdSvc = ctx.getBean(ChangePasswordService.class);
         try{
             changePwdSvc.changePassword(arg[1], arg[2], arg[3]);
             System.out.println("암호를 변경했습니다.\n");

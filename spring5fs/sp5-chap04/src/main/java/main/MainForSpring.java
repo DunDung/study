@@ -1,6 +1,6 @@
 package main.java.main;
 
-import main.config.AppCtx;
+import main.java.config.AppCtx;
 import main.java.spring.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

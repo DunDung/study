@@ -1,10 +1,9 @@
-package main.config;
+package main.java.config;
 
 import main.java.spring.MemberDao;
 import main.java.spring.MemberPrinter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 
 
 @Configuration

@@ -83,3 +83,20 @@ null이면 된다. 이처럼 @Autowired로 자동 주입할 대상이 필수가 아니라면 required속
 필드에도 적용된다.
 required는 인자를 null로 전달도 안하고 @Nullable은 null로 전달을 한다. 
 required는 값자체를 할당하지 않는다.
+
+@Component
+Component("infoPrinter") 처럼 컴포넌트에 값을 주었을 경우 값이 빈의 이름이 되고 값을 주지 않았을 경우엔
+클래스에 첫 글자를 소문자로 바꾼 이름을 빈 이름으로 사용한다.
+@Component스캔에서 제외 시키고 싶다면 excludeFilters 속성을 사용하면 된다.
+
+기본스캔대상
+@Component
+@Contoller
+@Service
+@Repository
+@Aspect
+@Configuration
+
+@Component  로 자동등록한 빈과 @Bean으로 수동등록한 빈 의 이름이 같다면
+수동등록한 빈이 우선이다. 이름이 다르다면 둘다 생성된다,
+@Qualifier로 적절하게 사용해야 한다.

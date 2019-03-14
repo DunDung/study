@@ -1,4 +1,4 @@
-package main.config;
+package main.java.config;
 
 import main.java.spring.*;
 import org.springframework.beans.factory.annotation.Qualifier;
