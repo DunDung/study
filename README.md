@@ -58,4 +58,42 @@ Vue.component('child-component', {
 <child-component v-bind:"하위 컴포넌트의 props 속성 이름"="상위 컴포넌트의 data 속성"></child-component>
 //child-component 컴포넌트 태그에 v-bind 속성을 추가 -> 하위 컴포넌트의 props 속성이름 = 상위 컴포넌트의 data 속성
 ```
-컴포넌트를 등록함과 동시에 뷰 인스턴스 자체가 상위 컴포넌트가 되기 때문.  
+컴포넌트를 등록함과 동시에 뷰 인스턴스 자체가 상위 컴포넌트가 되기 때문. 
+* 하위에서 상위 컴포넌트로 이벤트 전달하기
+이벤트를 발생시켜 하위에서 상위로 통신한다.  
+데이터를 전달하고 싶다면 이벤트 버스를 이용  
+```
+//하위 컴포넌트의 이벤트 발생시키기
+method: {
+  showLog: function() {
+    this.$emit('show-log');
+  }
+}
+```
+```
+<child-component v-on:show-log="printText"></child-component>
+//v-on속성을 통해 하위 컴포넌트의 이벤트명과 상위 컴포넌트의 메서드명을 "="을 통해 연결 시킨다.
+```
+* 관계 없는 컴포넌트 간 통신 - 이벤트 버스
+```
+//이벤트 버스를 위한 추가 인스턴스 1개 생성
+var eventBus = new Vue();
+```
+```
+//이벤트를 보내는 컴포넌트
+methods: {
+  메서드명 : function() {
+    eventBus.$emit('이벤트명', 데이터);
+  }
+}
+```
+```
+//이벤트를 받는 컴포넌트
+methods: {
+  created: function() {
+    eventBus.$on('이벤트명', function(데이터) {
+      ...
+    });
+  }
+}
+```
