@@ -1,9 +1,7 @@
 package com.example.dto;
 
-public class Item {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Item {
     int id;
     String contents;
 
