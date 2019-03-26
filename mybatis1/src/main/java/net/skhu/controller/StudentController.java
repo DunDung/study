@@ -18,8 +18,10 @@ import net.skhu.mapper.StudentMapper;
 @RequestMapping("/student")
 public class StudentController {
 
-    @Autowired StudentMapper studentMapper;
-    @Autowired DepartmentMapper departmentMapper;
+    @Autowired
+    StudentMapper studentMapper;
+    @Autowired
+    DepartmentMapper departmentMapper;
 
     @RequestMapping("list")
     public String list(Model model) {
@@ -28,7 +30,7 @@ public class StudentController {
         return "student/list";
     }
 
-    @RequestMapping(value="create", method=RequestMethod.GET)
+    @RequestMapping(value = "create", method = RequestMethod.GET)
     public String create(Model model) {
         Student student = new Student();
         List<Department> departments = departmentMapper.findAll();
@@ -37,13 +39,13 @@ public class StudentController {
         return "student/edit";
     }
 
-    @RequestMapping(value="create", method=RequestMethod.POST)
+    @RequestMapping(value = "create", method = RequestMethod.POST)
     public String create(Model model, Student student) {
         studentMapper.insert(student);
         return "redirect:list";
     }
 
-    @RequestMapping(value="edit", method=RequestMethod.GET)
+    @RequestMapping(value = "edit", method = RequestMethod.GET)
     public String edit(Model model, @RequestParam("id") int id) {
         Student student = studentMapper.findOne(id);
         List<Department> departments = departmentMapper.findAll();
@@ -52,7 +54,7 @@ public class StudentController {
         return "student/edit";
     }
 
-    @RequestMapping(value="edit", method=RequestMethod.POST)
+    @RequestMapping(value = "edit", method = RequestMethod.POST)
     public String edit(Model model, Student student) {
         studentMapper.update(student);
         return "redirect:list";

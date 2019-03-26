@@ -16,10 +16,12 @@ import net.skhu.mapper.StudentMapper;
 @RequestMapping("mybatis")
 public class MybatisController {
 
-    @Autowired DepartmentMapper departmentMapper;
-    @Autowired StudentMapper studentMapper;
+    @Autowired
+    DepartmentMapper departmentMapper;
+    @Autowired
+    StudentMapper studentMapper;
 
-    @RequestMapping(value="cacheTest", method=RequestMethod.GET)
+    @RequestMapping(value = "cacheTest", method = RequestMethod.GET)
     public String cacheTest(Model model) {
         List<Department> departments = departmentMapper.findAll();
         model.addAttribute("departments", departments);
@@ -28,7 +30,7 @@ public class MybatisController {
         return "mybatis/cacheTest";
     }
 
-    @RequestMapping(value="cacheTest", method=RequestMethod.POST)
+    @RequestMapping(value = "cacheTest", method = RequestMethod.POST)
     public String cache(Model model, Department department) {
         departmentMapper.update(department);
         return "redirect:cacheTest";

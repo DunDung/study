@@ -3,10 +3,10 @@ package net.skhu.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Department implements Serializable  {
-	private static final long serialVersionUlD = 1L;
+public class Department implements Serializable {
+    private static final long serialVersionUlD = 1L;
 
-	int id;
+    int id;
     String departmentName;
     Date time;
 
@@ -27,10 +27,10 @@ public class Department implements Serializable  {
     }
 
     public Date getTime() {
-    	return time;
+        return time;
     }
 
     public void setTime(Date time) {
-    	this.time = time;
+        this.time = time;
     }
 }
