@@ -7,8 +7,6 @@
     INSERT Item (contents)
     VALUES (#{contents})
   </insert>
-  <select id="findAll" resultType="Item">
-    SELECT * FROM Item
-  </select>
+
 
 </mapper>

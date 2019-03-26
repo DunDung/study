@@ -13,16 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/todo")
 public class TodoController {
-
     @Autowired
     ItemMapper itemMapper;
 
     @GetMapping("/addTodo/{contents}")
     public void create(@PathVariable String contents) {
-        itemMapper.findAll();
-        //        Item a_Item = new Item(contents);
-//        itemMapper.insert(a_Item);
-//        System.out.println("성공 " +contents);
+        Item a_Item = new Item();
+        a_Item.setContents(contents);
+        itemMapper.insert(a_Item);
     }
 
 }

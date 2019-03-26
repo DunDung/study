@@ -2,12 +2,11 @@ package com.example.dto;
 
 public class Item {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String contents;
 
-    public Item(String contents) {
-        this.contents = contents;
-    }
 
     public int getId() {
         return id;
