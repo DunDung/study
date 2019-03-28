@@ -7,15 +7,21 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       newTodoItem: ''
     }
   },
   methods: {
-    addTodo () {
-      var a = this.newTodoItem
-      this.$http.get('/todo/addTodo/' + a).then().catch()
+    addTodo() {
+      var contents = this.newTodoItem.trim();
+      if(contents != ""){
+        this.$http.get('/todo/addTodo/' + contents).then().catch()
+        this.clearInput()
+      }
+    },
+    clearInput() {
+      this.newTodoItem = '';
     }
   }
 }
