@@ -4,6 +4,10 @@
 
 <mapper namespace="net.skhu.mapper.StudentMapper">
     <cache flushInterval="20000"/>
+    
+    <select id="findByDepartmentId" resultType="Student">
+        SELECT * FROM Student WHERE departmentId = #{departmentId}
+    </select>
 
     <select id="findOne" resultType="Student">
         SELECT * FROM Student WHERE id = #{id}

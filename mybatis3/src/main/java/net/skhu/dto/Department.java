@@ -2,12 +2,23 @@ package net.skhu.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class Department implements Serializable {
     private static final long serialVersionUID = 1L;
+
     int id;
     String departmentName;
     Date time;
+    List<Student>  students;
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
 
     public int getId() {
         return id;

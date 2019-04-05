@@ -10,5 +10,6 @@ import net.skhu.dto.Department;
 public interface DepartmentMapper {
     List<Department> findAll();
     void update(Department department);
+    List<Department> findAllWithStudents();
 }
 

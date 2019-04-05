@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/Spring-Study.iml" filepath="$PROJECT_DIR$/Spring-Study.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring5fs-master/sp5-chap02/sp5-chap02.iml" filepath="$PROJECT_DIR$/spring5fs-master/sp5-chap02/sp5-chap02.iml" />
-    </modules>
-  </component>
-</project>
