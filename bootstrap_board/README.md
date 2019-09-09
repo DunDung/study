@@ -1,4 +1,4 @@
-# bootstrap-bbs
+# bootstrap_board
 
 > A Vue.js project
 
