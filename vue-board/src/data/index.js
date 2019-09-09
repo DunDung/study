@@ -1,7 +1,7 @@
 export default [
   {
     writer: '아이린',
-    title: '레드벨렛',
+    title: '레드벨벳',
     content: '1'
   },
   {
