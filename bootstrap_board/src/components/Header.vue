@@ -7,8 +7,9 @@
 
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav>
+          <!--우리가 만들 라우터를 이용하기 위해선 href가 아닌 to로? -->
           <b-nav-item href="#">공지사항</b-nav-item>
-          <b-nav-item href="#">자유게시판</b-nav-item>
+          <b-nav-item to="/board/free">자유게시판</b-nav-item>
           <b-nav-item href="#">구인구직</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
