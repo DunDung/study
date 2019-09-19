@@ -2,6 +2,7 @@
   <div>
     <!--fields로 필요한 속성만 보여주기, 컬럼명 변경 -->
     <b-table striped hover :items="items" :fields="fields" @row-clicked="rowClick"></b-table>
+    <b-button @click="writeContent">글쓰기</b-button>
   </div>
 </template>
 
@@ -44,6 +45,11 @@ import data from '@/data'
           //``와 ''의 차이는?
           path: `/board/free/detail/${item.content_id}`
         })
+      },
+      writeContent(){
+         this.$router.push({
+           path: '/board/free/create'
+         })
       }
     }
   }
