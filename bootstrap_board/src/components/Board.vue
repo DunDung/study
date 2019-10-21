@@ -1,7 +1,14 @@
 <template>
   <div>
     <!--fields로 필요한 속성만 보여주기, 컬럼명 변경 -->
-    <b-table striped hover :items="items" :fields="fields" @row-clicked="rowClick"></b-table>
+    <b-table striped hover :items="items" :per-page="perPage" :current-page="currentPage" :fields="fields" @row-clicked="rowClick"></b-table>
+    <!-- 페이지네이션 -->
+    <b-pagination
+      v-model="currentPage"
+      :total-rows="rows"
+      :per-page="perPage"
+      align="center"
+    ></b-pagination>
     <b-button @click="writeContent">글쓰기</b-button>
   </div>
 </template>
@@ -18,6 +25,8 @@ import data from '@/data'
       //filter 함수는 조건에 맞는 것만 판별해서 리턴한다.
       items = items.map(contentItem => {return {...contentItem, user_name: data.User.filter(userItem => userItem.user_id == contentItem.user_id)[0].name}})
       return {
+        currentPage: 1,
+        perPage: 10,
         fields: [
           {
             key: 'content_id',
@@ -50,6 +59,11 @@ import data from '@/data'
          this.$router.push({
            path: '/board/free/create'
          })
+      }
+    },
+    computed: {
+      rows () {
+        return this.items.length
       }
     }
   }
