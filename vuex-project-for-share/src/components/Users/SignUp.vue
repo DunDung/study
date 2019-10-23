@@ -42,7 +42,6 @@ import { EventBus } from '@/main.js'
     },
     methods: {
       // ...mapMutaions(['addUsers']) //methods에 mapMutations 추가
-      // ...mapMutaions(['addUsers']) //methods에 mapMutations 추가
       signUp() {
         let userObj = {
           userId: this.userId,
