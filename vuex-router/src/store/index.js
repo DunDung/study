@@ -54,23 +54,32 @@ export default new Vuex.Store({
         .post("https://reqres.in/api/login", loginObj)
         .then(res => { //function으로 하면 메소드 내부를 가리키기 때문에 에로우 펑션으로 전체 인스턴스를 가리켜야한다.
           //성공시 토큰 반환, 헤더에 토큰을 포함시켜서 유저정보 요청
+          let token = res.data.token
           let config = { //헤더값 설정해주는 개게
             headers: {
-              "access-token": res.data.token
+              "access-token": token
             }
           }
           axios
           .get("https://reqres.in/api/users/2", config)
-          .then(res => {})
-          .catch(err => {})
-        console.log(res)
+          .then(response => {
+            let userInfo = {
+              id: response.data.data.id,
+              first_name: response.data.data.first_name,
+              last_name: response.data.data.last_name,
+              avatar: response.data.data.avatar
+            }
+            commit("loginSuccess", userInfo) //response.data.data를 직접 넣어줘도 무방
+          })
+          .catch(() => {
+            alert("이메일과 비밀번호를 확인하세요.")
+          })
         })
-        .catch(err => {
-          console.log(err)
+        .catch(() => {
+          alert("이메일과 비밀번호를 확인하세요.")
         })
         .then(() => {
           //항상 반환
-          console.log('postTest')
         })
       },
       logout({commit}) {
