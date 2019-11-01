@@ -37,7 +37,10 @@
                   block
                   @click="login({email, password})"
                 >로그인</v-btn>
+                <!--
                 <v-btn @click="test">테스트</v-btn>
+                <v-btn @click="postTest">포스트테스트</v-btn>
+                -->
               </div>
           </v-card>
        </v-flex>
@@ -46,7 +49,6 @@
 </template>
 <script>
   import { mapState, mapActions } from 'vuex'
-  import axios from 'axios'
   export default {
     data () {
       return {
@@ -59,20 +61,38 @@
     },
     methods: {
       ...mapActions(["login"]),
-      test() {
-        axios
-          .get("https://reqres.in/api/users?page=2")
-          .then(res => { //function으로 하면 메소드 내부를 가리키기 때문에 에로우 펑션으로 전체 인스턴스를 가리켜야한다.
-            console.log(res)
-          })
-          .catch(err => {
-            console.log(err)
-          })
-          .then(() => {
-            //항상 반환
-            console.log('test')
-          })
-        }
+      // test() {
+      //   axios
+      //     .get("https://reqres.in/api/users?page=2")
+      //     .then(res => { //function으로 하면 메소드 내부를 가리키기 때문에 에로우 펑션으로 전체 인스턴스를 가리켜야한다.
+      //       console.log(res)
+      //     })
+      //     .catch(err => {
+      //       console.log(err)
+      //     })
+      //     .then(() => {
+      //       //항상 반환
+      //       console.log('test')
+      //     })
+      //   },
+      //   postTest() {
+      //     //post는 object를 body에 담아서 보냄
+      //     axios
+      //     .post("https://reqres.in/api/register", {
+      //       "email": "eve.holt@reqres.in",
+      //       "password": "pistol"
+      //     })
+      //     .then(res => { //function으로 하면 메소드 내부를 가리키기 때문에 에로우 펑션으로 전체 인스턴스를 가리켜야한다.
+      //       console.log(res)
+      //     })
+      //     .catch(err => {
+      //       console.log(err)
+      //     })
+      //     .then(() => {
+      //       //항상 반환
+      //       console.log('postTest')
+      //     })
+      //   }
       }
     }
 </script>
