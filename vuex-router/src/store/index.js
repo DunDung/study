@@ -50,6 +50,7 @@ export default new Vuex.Store({
       //     router.push({ name : "mypage"})
       //   }
         //post는 object를 body에 담아서 보냄
+        console.log(loginObj)
         axios //로그인 -> 토큰 반환
         .post("https://reqres.in/api/login", loginObj)
         .then(res => { //function으로 하면 메소드 내부를 가리키기 때문에 에로우 펑션으로 전체 인스턴스를 가리켜야한다.
