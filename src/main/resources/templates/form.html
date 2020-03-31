@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회 원 가 입</title>
+</head>
+<body>
+<h1>회 원 가 입</h1>
+<!--비밀번호가  url에 노출된다 get방식은 post로 바꾸자-->
+<form action="/users" method="post">
+    이름 : <input type="text" name="name"/>
+    <br/><br/>
+    나이 : <input type="text" name="age"/>
+    <br/><br/>
+    <input type="submit" value="회원가입"/>
+</form>
+</body>
+</html>
