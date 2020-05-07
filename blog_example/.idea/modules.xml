@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Exception/Exception.iml" filepath="$PROJECT_DIR$/Exception/Exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HardCodding/HardCodding.iml" filepath="$PROJECT_DIR$/HardCodding/HardCodding.iml" />
       <module fileurl="file://$PROJECT_DIR$/Immutable/Immutable.iml" filepath="$PROJECT_DIR$/Immutable/Immutable.iml" />
       <module fileurl="file://$PROJECT_DIR$/Map/Map.iml" filepath="$PROJECT_DIR$/Map/Map.iml" />
       <module fileurl="file://$PROJECT_DIR$/Optional/Optional.iml" filepath="$PROJECT_DIR$/Optional/Optional.iml" />
