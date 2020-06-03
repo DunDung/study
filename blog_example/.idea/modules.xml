@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Composition/Composition.iml" filepath="$PROJECT_DIR$/Composition/Composition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demeter/Demeter.iml" filepath="$PROJECT_DIR$/Demeter/Demeter.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exception/Exception.iml" filepath="$PROJECT_DIR$/Exception/Exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/HardCodding/HardCodding.iml" filepath="$PROJECT_DIR$/HardCodding/HardCodding.iml" />
       <module fileurl="file://$PROJECT_DIR$/Immutable/Immutable.iml" filepath="$PROJECT_DIR$/Immutable/Immutable.iml" />
