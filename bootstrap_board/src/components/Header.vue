@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-btn color="error"> error </v-btn>
     <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-brand href="#">Vue.js로 게시판 만들기</b-navbar-brand>
 

@@ -20,7 +20,8 @@
     "intersection-observer": "^0.7.0",
     "regenerator-runtime": "^0.13.3",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuetify": "^2.1.10"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.6.3",
