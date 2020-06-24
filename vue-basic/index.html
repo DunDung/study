@@ -8,7 +8,8 @@
 </head>
 <body>
     <div id="app">
-        {{ person.name }} {{ person.age }}
+        {{ person.name }} {{ person.age }} </br>
+        {{ nextYear('안녕하세요!') }}
     </div>
     <script>
         new Vue({
@@ -17,6 +18,15 @@
                 person: {
                     name: 'dundung',
                     age: 25,
+                }
+            },
+            methods: {
+                nextYear(greeting) {
+                    return greeting + '! ' + this.person.name + '은 내년에 ' + (this.person.age + 1) + '살 입니다.';
+                },
+                otherMethod: function() {
+                    // 함수에서 함수를 호출 할 수 있다.
+                    this.nextYear();
                 }
             }
         })
