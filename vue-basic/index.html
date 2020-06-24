@@ -10,15 +10,24 @@
     <div id="app">
         {{ person.name }} {{ person.age }} </br>
         {{ nextYear('안녕하세요!') }}
+        <input v-bind:type=type :value= inputData> <!-- v-bind: 를 그냥 :만 써도 된다.-->
+        <a :href=link>둔덩 블로그</a>
+        <a :href=getDunDungBlog(1)>둔덩 블로그</a>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
+                getDunDungBlog(postNo) {
+                    return this.link + '/' + postNo;
+                },
                 person: {
                     name: 'dundung',
                     age: 25,
-                }
+                },
+                inputData: 'hello',
+                type: 'text',
+                link: 'https://www.dundung.tistory.com',
             },
             methods: {
                 nextYear(greeting) {
