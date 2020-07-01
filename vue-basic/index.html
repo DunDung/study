@@ -13,16 +13,12 @@
         <input v-bind:type=type :value= inputData> <!-- v-bind: 를 그냥 :만 써도 된다.-->
         <a :href=link>둔덩 블로그</a>
         <a :href=getDunDungBlog(1)>둔덩 블로그</a> </br>
-
-        {{ year }}
-        <button v-on:click="plus">더하기</button>
-        <button v-on:click="minus">빼기</button>
+        <button v-on:click="alert">Click me</button>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
-                year : 2020 ,
                 getDunDungBlog(postNo) {
                     return this.link + '/' + postNo;
                 },
@@ -42,11 +38,8 @@
                     // 함수에서 함수를 호출 할 수 있다.
                     this.nextYear();
                 },
-                plus() {
-                    this.year += 1;
-                },
-                minus() {
-                    this.year -= 1;
+                alert() {
+                    alert('hi dundung!');
                 }
             }
         })
