@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- 대부분의 경우에는 computed 속성을 쓰고 computed를 쓸 수 없을 땐 watch를 쓰자.
+데이터 변경을 감지하는 특징은 공통적이나 computed는 반환을 할 수 있고 watch는 할 수 없기때문에 computed가 훨씬 코드가 간결하다. -->
+
+<body>
+    <div id="app">
+        {{ message }} <br>
+        <button @click="changeMessage">Click</button><br>
+        {{updated}}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello',
+                updated: '아니요',
+
+            },
+            methods: {
+                changeMessage() {
+                    this.message = 'dundung'
+                },
+            },
+            computed: {
+                reverseMessage() {
+                    return this.message.split('').reverse().join('');
+                }
+            },
+            watch: {
+                // 감시하고 싶은 변수 이름이 메서드이름이 된다. 메서드 파라미터가 고정인듯??
+                message(newValue, oldValue) {
+                    console.log(newValue, oldValue);
+                    this.updated = '넴';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
