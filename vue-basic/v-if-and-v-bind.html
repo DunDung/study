@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if & v-bind</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="show">YES</div>
+        <div v-else>NO</div>
+        <!-- 여러개의 태그에 v-if를 걸고싶으면 template로 감싼다. -->
+        <template v-if="show">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </template>
+        <template v-if="number === 1">
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+        </template>
+        <div v-else-if="number === 2">2</div>
+        <div v-else>3</div>
+        <br>
+        <button @click="toggleShow">toggle</button>
+        <button @click="increase">increase</button> {{ number }}
+        
+        <!-- v-show 시작 -->
+        <div v-show="show"> V-SHOW YES </div>
+        <button @click="toggleShow">toggle</button>
+        <!-- v-show는 렌더링은 미리한다. -->
+        <!-- v-if는 토글해줄 때마다 렌더링이 되기 때문에 비용이 높지만 v-show는 미리 렌더링을 시켜놓기 때문에 초기 렌더링 비용 더 높다.
+        매우 자주 바꾸기를 원한다면 v-show를 쓰는 것이 좋고, 런타임 시 조건이 바뀌지 않으면 v-if가 좋다. -->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show: true,
+                number: 1,
+            },
+            methods: {
+                toggleShow() {
+                    this.show = !this.show;
+                },
+                increase() {
+                    this.number++;
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>
