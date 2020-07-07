@@ -1,0 +1,48 @@
+package baekjoon.exhaustive_search;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+//체스판 다시 칠하기
+public class Q1018 {
+	static char [][] white = new char[8][8];
+	static char [][] black = new char[8][8];
+	
+	public static void buildChess() {
+		int k = 0;
+		for(int i=0; i<8; i++) {
+			for(int j=0; j<8; j++) {
+				if(k%2 == 0) {
+					white[i][j] = 'W';
+				} else {
+					white[i][j] = 'B';
+				}
+				k++;
+			}
+		}
+		k = 1;
+		for(int i=0; i<8; i++) {
+			for(int j=0; j<8; j++) {
+				if(k%2 == 0) {
+					black[i][j] = 'W';
+				} else {
+					black[i][j] = 'B';
+				}
+				k++;
+			}
+		}
+		for(int i=0; i<8; i++) {
+			for(int j=0; j<8; j++) {
+				System.out.print(white[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+	public static void main(String[] args) {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		buildChess();
+		
+	}
+
+}

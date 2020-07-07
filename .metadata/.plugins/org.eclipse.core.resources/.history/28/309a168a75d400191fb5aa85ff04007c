@@ -1,0 +1,14 @@
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+public class test {
+	public static void main(String[] args) {
+		short inst = 32767;
+		inst += 1;
+		System.out.println(inst);
+	}
+	
+}

@@ -1,0 +1,19 @@
+
+public class test {
+	static int a,b,c;
+	public static void main(String[] args) {
+		a = 0;
+		b = 5;
+		c = 0;
+		prnt();
+		System.out.println(a+" "+b+" "+c);
+	}
+	static void prnt() {
+		while(a < b) {
+			++a;
+			c= c+a;
+			prnt();
+		}
+	}
+	
+}

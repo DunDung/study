@@ -1,0 +1,45 @@
+package baekjoon.greedy;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Stack;
+
+//ÀÒ¾î¹ö¸° °ýÈ£
+//-µÚ¿¡¸¦ ¹­´Â´Ù.
+public class Q1541 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String s = scan.nextLine();
+		String [] a = s.split("-");
+		List<Integer> stack = new Stack<>();
+		List<Integer> list = new ArrayList<>();
+
+		for(int i=0; i<a.length; i++) {
+			int length = 1;
+			String [] b  ;
+			System.out.println(a[i]);
+			if(a[i].contains("+")) {
+				b = a[i].split("+");
+				length = b.length;
+			}
+			else {
+				b = new String[1];
+				b[0] = a[i];
+			}
+			int sum = 0;
+			for(int j=0; j<length; j++) {
+				sum+=Integer.parseInt(b[j]);
+			}
+			list.add(sum);
+		}
+
+		int ans = list.get(0);
+		for(int i=1; i<list.size(); i++) {
+			ans -= list.get(i);
+		}
+		System.out.println(ans);
+	}
+
+}

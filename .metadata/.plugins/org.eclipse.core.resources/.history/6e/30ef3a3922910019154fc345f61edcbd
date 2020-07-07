@@ -1,0 +1,42 @@
+package baekjoon.exhaustive_search;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Q6603_ver2 {
+	public static List<Integer> list = new ArrayList<>(); 
+	public static void go(int [] a, boolean[] b) {
+		if(list.size()==6) {
+			for(int v : list)
+				System.out.print(v+" ");
+			System.out.println();
+			return;
+		}
+		
+		for(int i=0; i<a.length; i++) {
+			if(!b[i]) {
+				list.add(a[i]);
+				b[i] = true;
+				go(a, b);
+				b[i] = false;
+				list.remove(new Integer(a[i]));
+			}
+		}
+	}
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		while(true) {
+			int n = scan.nextInt();
+			if(n == 0) break;
+			int [] a = new int[n];
+			boolean [] b = new boolean[n];
+			for(int i=0; i<n; i++) {
+				a[i] = scan.nextInt();
+			}
+			go(a, b);
+			list.clear();
+		}
+	}
+
+}

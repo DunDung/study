@@ -1,0 +1,12 @@
+package baekjoon.exhaustive_search;
+
+import java.util.Scanner;
+
+//½ºµµÄí
+public class Q2580 {
+
+	public static void main(String[] args) {
+
+	}
+}
+

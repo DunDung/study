@@ -1,0 +1,36 @@
+package baekjoon.math;
+
+import java.util.Scanner;
+
+public class Q5613 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int ans = 0;
+		while(true) {
+			String s = scan.next();
+			int a = 0;
+			if(s.equals("=")) {
+				System.out.println(ans);
+				break;
+			}
+			if(s.equals("+")) {
+				ans+= a+scan.nextInt();
+			}
+			else if(s.equals("-")) {
+				ans+= a-scan.nextInt();
+			}
+			else if(s.equals("*")) {
+				ans+= a*scan.nextInt();
+			}
+			else if(s.equals("/")) {
+				ans+= a/scan.nextInt();
+			}
+			else {
+				a = Integer.parseInt(s);
+			}
+		}
+	}
+
+}

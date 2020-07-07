@@ -1,0 +1,19 @@
+package baekjoon.math;
+
+import java.util.Scanner;
+
+//a^b
+public class Q10827 {
+
+	public static void main(String [] args) {
+		Scanner sc = new Scanner(System.in);
+		String a = sc.next();
+		int b = sc.nextInt();
+		int idx = a.indexOf(".");
+		long head = Long.parseLong(a.substring(0, idx));
+		long teil = Long.parseLong(a.substring(idx+1, a.length()));
+		
+		System.out.println(Math.pow(teil, b));
+		System.out.println(Math.pow(head, b));
+	}
+}

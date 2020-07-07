@@ -1,0 +1,31 @@
+package baekjoon.exhaustive_search;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Q14889 {
+	public static int [] a;
+	public static int n;
+	public static List<String> list = new ArrayList<>();
+	
+	public static void go(int i, String s, int cnt) {
+		if(i>n || cnt>3) return ;
+		if(cnt==3) {
+			list.add(s);
+			return ;
+		}
+		go(i+1, s+i, cnt+1);
+		go(i+1, s, cnt);
+	}
+	
+	public static void main(String[] args) throws IOException  {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		n = Integer.parseInt(reader.readLine());
+		go(1, "", 0);
+		System.out.println(list.toString());
+		
+	}
+}

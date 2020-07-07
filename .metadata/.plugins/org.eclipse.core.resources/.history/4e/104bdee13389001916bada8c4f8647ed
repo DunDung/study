@@ -1,0 +1,31 @@
+package baekjoon.exhaustive_search;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//소수 경로
+//맨날 까먹는 에라토스테네스의 체
+public class Q1963 {
+
+	public static void main(String[] args) {
+		List<Boolean> list = new ArrayList<>();
+
+		list.add(false);
+		list.add(false);
+		for(int i=2; i<10000; i++) {
+			list.add(true);
+		}
+		for(int i=2; i*i<10000; i++) {
+			if(list.get(i)) {
+				for(int j=i*i; j<10000; j*=i) {
+					list.set(j, false);
+				}
+			}
+		}
+
+		for(int i=0; i<list.size(); i++) {
+			if(list.get(i))
+				System.out.println(i+" ");
+		}
+	}
+}

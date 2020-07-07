@@ -1,0 +1,10 @@
+package kakao.T2019;
+
+public class OpenChattingRoom {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

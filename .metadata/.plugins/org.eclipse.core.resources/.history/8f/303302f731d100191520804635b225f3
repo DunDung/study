@@ -1,0 +1,28 @@
+package kakao.T2020;
+import java.util.*;
+public class Q2 {
+
+	public static void main(String[] args) {
+		System.out.println(check("(()())("));
+	}
+	public static String solution(String p) {
+		String answer = "";
+		return answer;
+	}
+	public static boolean check(String s) {
+		Stack<Character> stack = new Stack<>();
+		for(int i=0; i<s.length(); i++) {
+			if(s.charAt(i)==('(')) {
+				stack.add(s.charAt(i));
+			} else{
+				if(stack.isEmpty()) {
+					return false;
+				} else if(stack.peek() == '(') {
+					stack.pop();
+				}
+			}
+		}
+		if(stack.isEmpty()) return true;
+		else return false;
+	}
+}

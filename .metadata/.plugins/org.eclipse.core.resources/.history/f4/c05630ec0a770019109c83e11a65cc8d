@@ -1,0 +1,55 @@
+package baekjoon.divide_and_conquer;
+
+import java.util.Scanner;
+
+//종이의 개수
+public class Q1780 {
+	static int minus = 0;
+	static int zero = 0;
+	static int one = 0;
+	
+	static void check(int[][]a, int n, int x, int y) {
+		int k = a[x][y];
+		System.out.println(x+" "+y);
+		boolean isOk = true;
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<n; j++) {
+				if(a[x+i][y+j] != k) {
+					check(a, n/3, x+i, y+j);
+					isOk=false;
+				}
+				else if(!isOk)
+					check(a, n/3, x+i, y+j);
+			}
+		}
+		if(isOk) {
+			if(k==-1)
+				minus++;
+			if(k==0)
+				zero++;
+			if(k==1)
+				one++;
+		}
+			
+	}
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int [][]a = new int[n][n];
+		
+		for(int i=0; i<n; i++)
+			for(int j=0; j<n; j++)
+				a[i][j] = scan.nextInt();
+		
+		int k = n/3;
+		for(int i=0; i<n; i+=3) {
+			for(int j=0; j<n; j+=3) {
+				check(a, n/3, i, j);
+			}
+		}
+		System.out.println(minus);
+		System.out.println(zero);
+		System.out.println(one);
+	}
+
+}

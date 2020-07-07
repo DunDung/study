@@ -1,0 +1,10 @@
+package baekjoon.exhaustive_search;
+
+import java.util.Scanner;
+
+//¾ËÆÄºª
+public class Q1987 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+	}
+}

@@ -1,0 +1,21 @@
+package baekjoon.exhaustive_search;
+
+import java.util.Scanner;
+
+//¿µÈ­°¨µ¶ ¼ò
+public class Q1436 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int k = 666;
+		int cnt = 1;
+		while(cnt != n) {
+			StringBuilder sb = new StringBuilder(String.valueOf(++k));
+			if(sb.indexOf("666")>=0) {
+				cnt++;
+			}
+		}
+		System.out.println(k);
+	}
+}

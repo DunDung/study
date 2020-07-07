@@ -1,0 +1,50 @@
+package baekjoon.math;
+
+import java.io.*;
+import java.util.*;
+
+//ÀÌÁø¼ö µ¡¼À
+public class Q1252 {
+
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		String a = st.nextToken();
+		String b = st.nextToken();
+		int aSize = a.length()-1;
+		int bSize = b.length()-1;
+		StringBuilder sb = new StringBuilder();
+		Stack<Integer> stack = new Stack<>();
+		
+		int c = 0;
+		while(aSize>=0 || bSize>=0) {
+			int aValue = 0;
+			int bValue = 0;
+			if(aSize >= 0) {
+				aValue = (a.charAt(aSize--)-'0');
+			}
+			if(bSize >= 0 ) {
+				bValue = (b.charAt(bSize--)-'0');
+			}
+			int value = aValue + bValue + c;
+			if(value >= 2) {
+				stack.push(value-2);
+				sb.append(value-2);
+				c = 1;
+			} else {
+				stack.push(value)
+				sb.append(value);
+				c = 0;
+			}
+		}
+		if(c > 0) {
+			sb.append(1);
+			stack.push(1);
+		}
+		for(int i=0; i<stack.size(); i++) {
+			System.out.print(stack.get(i));
+		}
+		System.out.println(sb.reverse().toString());
+	}
+
+}

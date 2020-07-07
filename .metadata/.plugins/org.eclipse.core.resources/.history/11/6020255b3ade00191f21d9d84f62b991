@@ -1,0 +1,28 @@
+package baekjoon.math;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+//°ñµå¹ÙÈå ÆÄÆ¼¼Ç
+public class Q17103 {
+	static boolean[] prime = new boolean[1000001];
+	public static void main(String[] args) throws IOException{
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		int tc = Integer.parseInt(bf.readLine());
+		while(tc-- > 0) {
+			int n =
+		}
+	}
+
+	public void che() {
+		int max = 1000000;
+		for(int i=2; i*i<=max; i++) {
+			if(!prime[i]) {
+				for(int j=i*i; j<=max; j*=i) {
+					prime[j] = true;
+				}
+			}
+		}
+	}
+}
