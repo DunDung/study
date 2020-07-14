@@ -2,6 +2,7 @@ package com.example.jpapractice.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -16,7 +17,7 @@ public class Member {
     @Column(name = "USERNAME")
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
@@ -44,12 +45,4 @@ public class Member {
         this.team = team;
     }
 
-    @Override
-    public String toString() {
-        return "Member{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            ", team=" + team +
-            '}';
-    }
 }

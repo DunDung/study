@@ -11,12 +11,14 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Team {
-    @OneToMany(mappedBy = "team")
-    List<Member> members = new ArrayList<>();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
+    @OneToMany(mappedBy = "team")
+    List<Member> members = new ArrayList<>();
 
     public Long getId() {
         return id;

@@ -14,18 +14,26 @@ public class JpaTest {
 
     @Test
     void persist() {
+        /*
         Team team = new Team();
         team.setName("TeamA");
         em.persist(team);
+
+         */
         Member member = new Member();
         member.setName("member1");
+        //   member.setTeam(team);
         em.persist(member);
-        team.getMembers().add(member);
+        // team.getMembers().add(member);
         em.flush();
         em.clear();
-        System.out.println("############" + member.getId());
+
         Member findMember = em.find(Member.class, member.getId());
-        findMember.setName("t아카데미");
-        System.out.println(findMember);
+
+        em.close();
+
+        Team findTeam = findMember.getTeam();
+        findTeam.getName();
+        System.out.println("findTeam : " + findTeam);
     }
 }
