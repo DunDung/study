@@ -1,4 +1,4 @@
-package com.example.jpapratice.domain;
+package com.example.jpapractice.domain;
 
 import java.util.ArrayList;
 import java.util.List;
