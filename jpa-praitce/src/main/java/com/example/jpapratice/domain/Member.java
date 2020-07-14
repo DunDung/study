@@ -1,4 +1,4 @@
-package jpa.study.entity;
+package com.example.jpapratice.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,8 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Member {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     @Column(name = "USERNAME")
@@ -41,5 +42,14 @@ public class Member {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", team=" + team +
+            '}';
     }
 }
