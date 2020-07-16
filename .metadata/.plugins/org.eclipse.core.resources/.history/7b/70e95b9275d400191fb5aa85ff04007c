@@ -1,9 +1,0 @@
-
-public class test {
-	public static void main(String[] args) {
-		short inst = 32767;
-		inst += 1;
-		System.out.println(inst);
-	}
-	
-}
