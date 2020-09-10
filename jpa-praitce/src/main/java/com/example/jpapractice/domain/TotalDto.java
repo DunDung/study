@@ -1,36 +1,35 @@
 package com.example.jpapractice.domain;
 
 public class TotalDto {
-    Long id;
-    String TeamName;
+    String memberName;
+    String teamName;
 
     public TotalDto(Member member) {
-        System.out.println(member);
-        this.id = member.getId();
-        this.TeamName = member.getTeam().getName();
+        this.memberName = member.getName();
+        this.teamName = member.getTeam().getName();
     }
 
-    public Long getId() {
-        return id;
+    public String getMemberName() {
+        return memberName;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
     }
 
     public String getTeamName() {
-        return TeamName;
+        return teamName;
     }
 
     public void setTeamName(String teamName) {
-        TeamName = teamName;
+        this.teamName = teamName;
     }
 
     @Override
     public String toString() {
         return "TotalDto{" +
-                "id=" + id +
-                ", TeamName='" + TeamName + '\'' +
+                "memberName='" + memberName + '\'' +
+                ", teamName='" + teamName + '\'' +
                 '}';
     }
 }

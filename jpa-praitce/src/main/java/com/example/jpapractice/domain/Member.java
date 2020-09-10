@@ -1,6 +1,5 @@
 package com.example.jpapractice.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,7 +13,6 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "USERNAME")
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)

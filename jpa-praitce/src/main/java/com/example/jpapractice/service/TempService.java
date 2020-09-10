@@ -8,25 +8,31 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class MemberService {
+public class TempService {
     private final MemberRepository memberRepository;
     private final TeamRepository teamRepository;
 
-    public MemberService(MemberRepository memberRepository, TeamRepository teamRepository) {
+    public TempService(MemberRepository memberRepository, TeamRepository teamRepository) {
         this.memberRepository = memberRepository;
         this.teamRepository = teamRepository;
     }
 
     @Transactional
     public void save() {
-        Team team = teamRepository.save(new Team());
-        Member member = memberRepository.save(new Member());
+        Team team = new Team();
+        team.setName("RED팀");
+        teamRepository.save(team);
+
+        Member member = new Member();
         member.setName("둔덩");
         member.setTeam(team);
+        memberRepository.save(member);
     }
 
-    @Transactional
-    public Member findAll() {
-        return memberRepository.findById(1L).get();
+    public Member findById(Long id) {
+        Member member = memberRepository.findById(id)
+                .orElseThrow(IllegalArgumentException::new);
+        member.getTeam();
+        return member;
     }
 }
