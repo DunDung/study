@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      a:link{
+        color:black
+      }
+      <!-- visited에서는 보안상 일부 속성만 사용가능하다. -->
+      a:visited{
+        color:red
+      }
+      <!-- 선언위치에 따라서 우선순위가 달라짐 hover가 active보다 높음 -->
+      <!-- hover 마우스를 올려놨을 때 -->
+      a:hover{
+        color:yellow;
+      }
+      <!-- active 마우스로 클릭할 때 클릭하는 동안  -->
+      a:active{
+        color:green;
+      }
+      <!-- 탭키를 누르면 포커스됨 엔터누르면 링크 접속됨 여러가지 이유로 맨 마지막에 써야한다. -->
+      a:focus{
+        color:white
+      }
+      <!-- 인풋박스 안에 클릭하면 색설정이 적용됨 -->
+      input:focus{
+        background-color:black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://github.com/DunDung">방문함</a>
+    <a href="https://a.a/">방문 안함</a></br>
+    <input type="text" ></input>
+  </body>
+</html>

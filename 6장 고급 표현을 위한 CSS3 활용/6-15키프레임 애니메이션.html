@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @-webkit-keyframes w3cMove {
+        from { background: yellow; left: 20px;}
+        to { background: lime; left: 200px;}
+      }
+      @-webkit-keyframes sway {
+        0% { background: white; left: 50px;}
+        25% { background: yellow; top: 40px; left: 150px;}
+        50% { background: lime; top: 40px; left: 250px;}
+        75% { background: yellow; left: 150px;}
+      }
+      #w3c_anim { -webkit-animation: w3cMove 6s; position: relative;}
+      #title { -webkit-animation: sway 6s; position: relative;}
+    </style>
+  </head>
+  <body>
+    <h3>5.5 새로운 문서 표준 <span id="title">HTML5</span></h3>
+    <img src="W3C_logo.png" id="w3c_anim" width="72" height="40">
+    <p>현재 W3C에서 표준안 개발을 하고 있는 HTML5는 차세대 웹문서 표준안으로 많은 관심이
+      집중되고 있다. 특히, 표준안 개발에 마이크로소프트등 대다수 회사들이 집중 하고 있다.</p>
+  </body>
+</html>

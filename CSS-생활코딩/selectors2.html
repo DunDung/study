@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      li{
+        color:red;
+        text-decoration:underline
+      }
+      /* 특정 태그만 효과주고싶을 땐 id를 사용하고 #으로 효과적용 */
+      #select{
+        font-size: 50px
+      }
+      .deactive{
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="deactive">수업의 순서</h1>
+    <ul>
+      <!-- 여러번 등장할때는 class로 그룹핑 딱 한번만 사용할 때는 id -->
+        <li class="deactive">HTML</li>
+        <li id="select">CSS</li>
+        <li class="deactive">Java</li>
+    </ul>
+  </body>
+</html>
