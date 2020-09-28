@@ -1,0 +1,1 @@
+ALTER TABLE DEPT ADD CONSTRAINT my_dept_name_uq UNIQUE(name);

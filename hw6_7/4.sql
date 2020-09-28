@@ -1,0 +1,1 @@
+alter table emp modify(salary number(38, 2) DEFAULT 40000.00);
