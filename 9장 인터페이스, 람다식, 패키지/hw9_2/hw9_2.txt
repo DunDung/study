@@ -1,0 +1,70 @@
+[hw9_2] 인터페이스와 무명 클래스  
+내    용 
+---------------------------------------------------------
+다음 프로그램을 실행시켜 보고 이해한 후
+PassTester, AdultTester 클래스 정의를 클래스를 없애고, 대신 무명클래스를 이용하도록 수정하시오.
+
+
+class Student {
+  int age;
+  int score;
+ }
+
+@FunctionalInterface
+ interface Tester {
+  boolean test(Student s);
+ }
+
+public class Main {
+  public static void check(Student s, Tester t) {
+   boolean result = t.test(s);
+   System.out.println(result);
+  }
+
+ public static void main(String... args) {
+   System.out.println("hw9_2: 홍길동");
+
+  Student kim = new Student();
+   kim.age = 19;
+   kim.score = 80;
+
+  class PassTester implements Tester {
+    @Override
+    public boolean test(Student s) {
+     return s.score >= 60;
+    }
+   }
+
+  class AdultTester implements Tester {
+    @Override
+    public boolean test(Student s) {
+     return s.age >= 20;
+    }   
+   }
+
+  check(kim, new PassTester());
+
+  check(kim, new AdultTester());
+  }
+ }
+
+
+ ----------------------------------------------------------
+목적
+- 무명클래스를 연습한다.
+
+----------------------------------------------------------
+유의사항
+- 적절한 comment
+   작성자, 작성일, 파일 내용 설명 등의 주석을 파일의 가장 앞부분에 둘것
+- 들여쓰기
+- 식별자 이름을 관례에 맞게 적절히 붙일 것
+- command-line에서 java -jar 과제코드.jar 로 채점합니다.
+철자도 똑같게 이 명령이 제대로 실행되어야 합니다.
+- 과제코드와 본인의 이름을 맨 처음 출력
+
+----------------------------------------------------------
+제출 
+- 과제코드.jar 파일
+- .java 파일
+ 
