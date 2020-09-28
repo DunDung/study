@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="UserDAOTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-03-27T03:11:30" hostname="DESKTOP-U00CC6A" time="0.555">
+  <properties/>
+  <testcase name="totalTest" classname="UserDAOTest" time="0.555"/>
+  <system-out><![CDATA[정상적으로 연결되었습니다.
+정상적으로 연결되었습니다.
+정상적으로 연결되었습니다.
+com.mysql.cj.jdbc.ClientPreparedStatement: UPDATE `user` SET `name` = 'changeDundung' WHERE user_id = 'dundung22'
+User{userId='dundung22', name='dundung'}
+정상적으로 연결되었습니다.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
