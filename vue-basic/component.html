@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue component</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <dundung-button></dundung-button>
+        <dundung-button2></dundung-button2>
+        
+    </div>
+    <script>
+        // 전역 컴포넌트 등록
+
+        Vue.component('hello-world', {
+            // 줄바꿈이 없으면 ' 사용 가능
+            template: '<div>hello-world</div>'
+        })
+        Vue.component('dundung-button', {
+            // template에서는 상위에 항상 div로 감싸고 있어야한다.
+            // 3버전부터는 아니다?
+            template: `
+            <div>
+                <hello-world></hello-world>
+                {{name}}<br>
+                <button @click="changeName">Click</button>
+            </div>
+            `,
+            // data를 그냥 쓰면 여러개의 컴포넌트를 사용할 때 한 컴포넌트에서만
+            //  값을 바꿔도 전체의 컴포넌트에 적용되기 때문에 data를
+            // 함수로 만들어서 오브젝트를 리턴해야 한다.
+            data() {
+                return {
+                    name: "dundung",
+                }
+            },
+            methods: {
+                changeName() {
+                    // 밑에 다른 인스턴스의 이름을 수정
+                    this.name += ' updated!';
+                }
+            },
+        });
+        // 지역 컴포넌트
+        const HellowWorld = {
+            template: '<div>Hello world</div>'
+        }
+        const dundungButton = {
+            components: {
+                'hello-world': HellowWorld,
+            },
+            template: `
+            <div>
+                <hello-world></hello-world>
+                {{name}}<br>
+                <button @click="changeName">Click</button>
+            </div>
+            `,
+            data() {
+                return {
+                    name: "dundung",
+                }
+            },
+            methods: {
+                changeName() {
+                    this.name += ' updated!';
+                }
+            },
+        };
+        const app = new Vue({
+            el: '#app',
+            components: {
+                'dundung-button2': dundungButton
+            }
+        })
+    </script>
+</body>
+
+</html>

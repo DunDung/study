@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 & 스타일 바인딩</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 클래스 이름에 대시(-)가 있는 경우 ''로 String으로 바꿔줘야 한다. -->
+        <div :class="{ red: isRed, 'font-bold': isBold }"> HELLO </div>
+        <!-- css 스타일이 아니기 때문에 카멜케이스로 fontSize를 작성, 브라우저에서는 자동으로 font-size로 바뀐다. -->
+        <div :style="{ color: red, fontSize: size}"> HELLO </div>
+        <button @click="update"> update </button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isRed: false,
+                isBold: false,
+                red: 'red',
+                size: '30px',
+            },
+            methods: {
+                update() {
+                    this.isRed = !this.isRed;
+                    this.isBold = !this.isBold;
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>
