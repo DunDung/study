@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 public class Example {
 
     public static void main(String[] args) throws Exception {
-        Object obj = new Car("foo", 0);
+        Object obj = new Car("foo", 0, 1);
         Class carClass = obj.getClass();
         Method move = carClass.getMethod("move");
 

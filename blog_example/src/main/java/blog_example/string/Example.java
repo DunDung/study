@@ -7,7 +7,6 @@ public class Example {
         System.out.println(System.identityHashCode(str));
         str += "world!";
         System.out.println(System.identityHashCode(str));
-        StringBuilder stringBuilder
     }
 
     public static String plusString() {
@@ -15,6 +14,6 @@ public class Example {
         for (int i = 1; i <= 1000; i++) {
             temp += i;
         }
-        return builder.toString();
+        return temp;
     }
 }
