@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">B201432041</string>
+    <string name="button">문자열 이동</string>
+    <string name="input_editText1">문자열을 입력하세요</string>
+</resources>
