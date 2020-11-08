@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="button1"> 버튼1</button>
+<button id="button2"> 버튼2</button>
+<script type="text/javascript">
+    document.getElementById("button1").addEventListener('click', function () {
+        event()
+    })
+    document.getElementById("button2").addEventListener('click', () => {
+        event()
+    })
+
+    function event() {
+        console.log("이벤트 등록")
+    }
+</script>
+</body>
+</html>
